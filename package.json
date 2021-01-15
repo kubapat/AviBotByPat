@@ -1,0 +1,23 @@
+{
+  "name": "discord",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jakub Pataluch",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.0.2",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "ivao-whazzup": "^1.1.3",
+    "node-html-parser": "^1.2.13",
+    "node-json-db": "^1.1.0",
+    "quick.db": "^7.1.3",
+    "request": "^2.88.2",
+    "typescript": "^4.0.3",
+    "vatsim-data-handler": "^3.4.0"
+  }
+}
