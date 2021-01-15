@@ -20,7 +20,6 @@
                         "X": "Unspecified"
                      };
 
- var filekPosition="";
 
  function convertTime(minutes) {
           minutes = parseInt(minutes,10);
@@ -176,37 +175,5 @@
                message.channel.send(ivaoDep);
                message.channel.send(ivaoArr);
           }).catch();
- }
-
- exports.filek = function(client) {
-          var vid = "578024";
-          try {
-          Whazzup.fetchData().then(data => {
-               var found = false;
-               data["atcs"].forEach(el => {
-                     if(el["vid"] == vid) {
-                          const ivaoMessage = new Discord.MessageEmbed()
-                             .setColor('#0099ff')
-                             .setTitle('FILEK IS ACTIVE on position '+el["callsign"])
-                             .addField('Link','See controller on [IVAO Webeye](https://webeye.ivao.aero)');
-                             if(filekPosition == "") {
-                                   client.channels.cache.get("518165707771609108").send(ivaoMessage);
-                                   filekPosition = el["callsign"];
-                             } else if(filekPosition != "" && filekPosition != el["callsign"]) {
-                                   const switchMessage = new Discord.MessageEmbed()
-                                       .setColor('#0099ff')
-    	                               .setTitle('FILEK switched from '+filekPosition+' to '+el["callsign"])
-                                       .addField('Link','See controller on [IVAO Webeye](https://webeye.ivao.aero)');
-                                       client.channels.cache.get("518165707771609108").send(switchMessage);
-                             }
-                             found = true;
-                     }
-               });
-               if(!found) filekPostion="";
-          });
-        } catch(e) {
-           if(e != undefined) console.log(e);
-        }
-
  }
 
