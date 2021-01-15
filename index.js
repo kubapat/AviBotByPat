@@ -49,7 +49,6 @@
       console.log('Ready for flight');
       admin.setStatus(client);
       let status = setInterval(function() { admin.setStatus(client); },600000); //every 10mins
-      //let filek = setInterval(function() { ivao.filek(client); },1200000); //every 20mins
  })
 
  client.on('message', message => {
@@ -139,17 +138,6 @@
            }
 
            admin.changePrefix(args[0],message);
-      } else if(command == "slawek" && args[0] == "losuj") {
-           fs.readFile("wulgaryzmy.json", (err, fileContent) => {
-             var data;
-             if(!err ) {
-                data = JSON.parse(fileContent);
-                const keys = Object.keys(data);
-
-                const randIndex = Math.floor(Math.random() * data.length);
-				message.channel.send("Sławek to "+data[randIndex]);
-             }
-           });
       } else {
             const helpMessage = new Discord.MessageEmbed()
                                          .setColor('#0099ff')
