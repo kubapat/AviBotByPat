@@ -95,10 +95,10 @@
 							var ok = '',num=0;
 
 							airportData["runways"].forEach(rwy => {
-                                 var bearing = parseInt(rwy["bearing"],10);
-                                 if(bearing >= wind && (bearing-wind <= 90 || ((360-bearing)+wind) <= 90)) { ok+=rwy["ident"]+' '; num+=1; }
-                                 if(bearing < wind && (wind-bearing <= 90 || ((360-wind)+bearing) <= 90)) { ok+=rwy["ident"]+' '; num+=1; }
-	                         //if(Math.abs(parseInt(rwy["bearing"],10)-wind)<=90) ok+=rwy["ident"]+' '; //(bearingToIdent(parseInt(rwy["bearing"],10))+' ');
+                                				 var bearing = parseInt(rwy["bearing"],10);
+                              					 if(bearing >= wind && (bearing-wind <= 90 || ((360-bearing)+wind) <= 90)) { ok+=rwy["ident"]+' '; num+=1; }
+				                                 if(bearing < wind && (wind-bearing <= 90 || ((360-wind)+bearing) <= 90)) { ok+=rwy["ident"]+' '; num+=1; }
+	                        				 //if(Math.abs(parseInt(rwy["bearing"],10)-wind)<=90) ok+=rwy["ident"]+' '; //(bearingToIdent(parseInt(rwy["bearing"],10))+' ');
 							});
 
 							if(ok == '') message.channel.send("Cannot find active runway clearly");
